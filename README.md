@@ -9,5 +9,5 @@ Run `npm run dev` for a dev server. Navigate to `http://localhost:3000/`. The ap
 
 ## Build
 
-Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `npm run vite preview` for preview production build.
+Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `npm run serve` for preview production build.
 
