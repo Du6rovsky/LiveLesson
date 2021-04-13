@@ -25,7 +25,8 @@ class VideoComponent extends React.Component<Props, {}> {
         return (
             <div className="video">
                 {this.props.isEdit && <ControlsComponent cb={this.props.controlCb}/>}
-                {!this.props.isEdit && <iframe width="100%" height="345" allowFullScreen src={this.props.item.video_url}/>}
+                {!this.props.isEdit &&
+                <iframe width="100%" height="345" allowFullScreen src={this.props.item.video_url}/>}
                 {!this.props.isEdit && <p>{this.props.item.video_description}</p>}
                 {this.props.isEdit &&
                 <Input placeholder="Url"

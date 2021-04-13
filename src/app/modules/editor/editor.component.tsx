@@ -13,7 +13,6 @@ import HeaderEntity from "../../core/entities/Header.entity";
 import DescriptionEntity from "../../core/entities/Description.entity";
 import CarouselEntity from "../../core/entities/Carousel.entity";
 import VideoEntity from "../../core/entities/Video.entity";
-import AudioEntity from "../../core/entities/Audio.entity";
 import PostEntity from "../../core/entities/Post.entity";
 import FileEntity from "../../core/entities/File.entity";
 import {lessonService} from "../../shared/services/lesson.service";
@@ -25,9 +24,7 @@ class EditorComponent extends Component {
     componentDidMount() {
         localForage.getItem('lesson').then((data) => {
             if (data) {
-                setTimeout(() => {
-                    this.setState(data as LessonEntity);
-                });
+                this.setState(data as LessonEntity);
             }
         });
 
@@ -57,7 +54,7 @@ class EditorComponent extends Component {
                 block = new VideoEntity(type);
                 break
             case 'audio':
-                block = new AudioEntity(type);
+                block = new FileEntity(type);
                 break
             case 'post':
                 block = new PostEntity(type);
@@ -116,7 +113,6 @@ class EditorComponent extends Component {
 
     public updateLesson() {
         localForage.setItem('lesson', this.state).then();
-
 
         // Lesson update API request mockup
         if (this.state.id) {
