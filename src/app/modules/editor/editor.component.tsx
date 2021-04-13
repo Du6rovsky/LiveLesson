@@ -173,7 +173,6 @@ class EditorComponent extends Component {
                         </Button>
                     </Tooltip>
                 </div>
-                {!this.state.isEdit && this.state.items?.length === 0 && <Empty/>}
                 {this.state.isEdit && this.state.items?.length === 0 &&
                 <span key={'1st-divider'}> {divider(-1)} </span>
                 }
